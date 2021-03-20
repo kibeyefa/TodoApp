@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <style>
+        html{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+        }
+        body header{
+            display: flex;
+            justify-content: space-between;
+            background-color: rgb(17, 15, 15);
+            color: whitesmoke;
+            margin-bottom: 20px;
+        }
+        body header form{
+            display: flex;
+            justify-content: space-around;
+        }
+        body header form input{
+            height: 30px;
+            margin-top: 15px;
+            height: 30px;
+            margin-left: 10px;
+        }
+        input[type=submit]{
+            margin-top: 14px;
+            height: 38px;
+            width:70px;
+            margin-right: 20px;
+            /* margin-left: 10px; */
+        }
+        body div.container{
+            width: 80%;
+            margin: auto;
+        }
+
+        body div.container div{
+            display: flex;
+            justify-content: space-between;
+            background-color: aliceblue;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        body div.container div div{
+            display: flex;
+            justify-content: space-between;
+        }
+        h5 {
+            font-size: 20px;
+            margin: 20px 0 15px;
+        }
+        button {
+            height: 30px;
+            margin: 10px;
+            /* margin-left: 10px; */
+            width: 70px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Todo App</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Add">
+        </form>
+    </header>
+
+    <div class="container">
+        {% block content %}
+        
+        {% endblock %}
+    </div>
+
+<script>
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% extends "Todo_list/base.html" %}
+
+{% block content %}
+
+{% if empty == True %}
+
+    <h1>You have no tasks, try adding some...</h1>
+
+{% else %}
+  
+{% for task in tasks %}
+<div id="">
+    <h5>{{task.title}}</h5>
+    <div>
+        <!-- <button id="cross">Cross</button> -->
+        <a href="{% url 'delete' pk=task.pk %}"><button>Delete</button></a>
+    </div>
+</div>
+{% endfor %}
+
+{% endif %}
+
+
+{% endblock  %}
